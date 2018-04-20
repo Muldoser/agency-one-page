@@ -111,11 +111,19 @@ In the component above we import the necessary styles.
 #### 6. Copy `scss`into `src/`
 Right now we won't quite get the right result. We specified the styles in our component, but we haven't added them to the project yet. We have to import the scss files from **Agency** to use the styles that have already been created. For this, we have placed the `scss` folder from **Agency** inside the `src` directory.
 
+### Images
+
+If you want to reuse the images from the template, copy the `img` folder into your project.
+
+#### 7. Import `img` folder and contents in to `src/`
+
+In the **OnePage** we renamed the `img` folder and every occurence/reference to `assets` (search and replace in _html_ and _scss_).
+
 ### Remaining setup
 
 In our _app.module.ts_, we want to specify where to go.
 
-#### 7. Add `AppMainPageComponent` to the main module and route there
+#### 8. Add `AppMainPageComponent` to the main module and route there
 
 To navigate to our new page component, we set up the angular router as follows:
 
@@ -132,7 +140,7 @@ To navigate to our new page component, we set up the angular router as follows:
 
 Lastly, we need to include Bootstrap's JavaScript in our project. We do this in the `main.ts`, above our app-bootstrapping.
 
-#### 8. Import bootstrap in **main.ts**
+#### 9. Import bootstrap in **main.ts**
 
 ``` typescript
 import 'bootstrap';
