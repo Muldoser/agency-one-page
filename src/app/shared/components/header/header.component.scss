@@ -1,8 +1,10 @@
+@import "../../../../scss/mixins.scss";
+
 // Styling for the masthead
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url('../assets/header-bg.jpg');
+  background-image: url('/assets/header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

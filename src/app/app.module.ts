@@ -9,7 +9,6 @@ import { appRoutes } from './app.routes';
 import { ComponentsModule } from './shared/components/components.module';
 import { AppMainPageModule } from './pages/main-page/main-page.module';
 import { AppContainerModule } from './container/container.module';
-import { AppNavigationModule } from './shared/components/navigation/navigation.module';
 
 const modules = [
   AppContainerModule,
