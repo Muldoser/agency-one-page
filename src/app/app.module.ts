@@ -3,13 +3,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AppMainPageComponent } from './main-page/main-page.component';
+
+import { appRoutes } from './app.routes';
+
+import { ComponentsModule } from './shared/components/components.module';
+import { AppMainPageModule } from './pages/main-page/main-page.module';
 import { AppContainerModule } from './container/container.module';
-import { AppMainPageModule } from './main-page/main-page.module';
+import { AppNavigationModule } from './shared/components/navigation/navigation.module';
 
 const modules = [
   AppContainerModule,
-  AppMainPageModule
+  AppMainPageModule,
+  ComponentsModule
 ];
 
 @NgModule({
@@ -18,10 +23,7 @@ const modules = [
   entryComponents: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'app' },
-      { path: 'app', component: AppMainPageComponent }
-    ]),
+    RouterModule.forRoot([...appRoutes]),
     ...modules
   ],
   providers: []

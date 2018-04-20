@@ -5,6 +5,13 @@
   },
   "apps": [
     {
+      "budgets": [
+        {
+          "type": "allScript",
+          "maximumWarning": "2000kb",
+          "maximumError": "3000kb"
+        }
+      ],
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -19,13 +26,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "scss/styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "acc": "environments/environment.acc.ts"
       }
     }
   ],
@@ -54,7 +62,12 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "class": {
+      "spec": false
+    },
+    "component": {
+      "changeDetection": "OnPush"
+    }
   }
 }

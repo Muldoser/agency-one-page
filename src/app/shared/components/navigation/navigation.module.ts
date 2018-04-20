@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { AppMainPageComponent } from './main-page.component';
+import { AppNavigationComponent } from './navigation.component';
 
 const components = [
-  AppMainPageComponent
+  AppNavigationComponent
 ];
 
 @NgModule({
   declarations: [...components],
   exports: [...components]
 })
-export class AppMainPageModule {}
+export class AppNavigationModule {}
