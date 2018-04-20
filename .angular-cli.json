@@ -26,8 +26,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "scss/styles.scss"
+        "scss/styles.scss",
+        "scss/global.scss"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../node_modules/bootstrap/scss"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -67,7 +73,8 @@
       "spec": false
     },
     "component": {
-      "changeDetection": "OnPush"
+      "changeDetection": "OnPush",
+      "viewEncapsulation": "None"
     }
   }
 }
