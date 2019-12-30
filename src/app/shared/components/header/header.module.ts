@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { AppMainPageComponent } from './main-page.component';
+import { AppHeaderComponent } from './header.component';
 
 const components = [
-  AppMainPageComponent
+  AppHeaderComponent
 ];
 
 @NgModule({
   declarations: [...components],
   exports: [...components]
 })
-export class AppMainPageModule {}
+export class AppHeaderModule {}
