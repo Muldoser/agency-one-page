@@ -23,13 +23,13 @@
     "@angular/platform-browser": "8.2.14",
     "@angular/platform-browser-dynamic": "8.2.14",
     "@angular/router": "8.2.14",
-    "core-js": "3.6.1",
-    "jquery": "3.4.1",
     "bootstrap": "4.4.1",
-    "popper.js": "1.16.0",
-    "rxjs": "6.5.4",
+    "core-js": "3.6.1",
     "font-awesome": "4.7.0",
-    "jquery.easing": "^1.4.1"
+    "jquery": "3.4.1",
+    "jquery.easing": "^1.4.1",
+    "popper.js": "1.16.0",
+    "rxjs": "6.5.4"
   },
   "devDependencies": {
     "@angular/cli": "8.3.21",
@@ -37,6 +37,7 @@
     "@angular/language-service": "8.2.14",
     "@types/jasminewd2": "2.0.8",
     "@types/node": "13.1.1",
+    "codelyzer": "5.2.1",
     "jasmine-core": "3.5.0",
     "karma": "4.4.1",
     "karma-chrome-launcher": "3.1.0",
@@ -46,7 +47,6 @@
     "protractor": "5.4.2",
     "ts-node": "8.5.4",
     "tslint": "5.20.1",
-    "typescript": "3.7.4",
-    "codelyzer": "5.2.1"
+    "typescript": "3.7.4"
   }
 }
