@@ -1,4 +1,44 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "one-page": {
+      "root": "packages/one-page",
+      "sourceRoot": "packages/one-page/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/js:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/one-page",
+            "main": "packages/one-page/src/index.ts",
+            "tsConfig": "packages/one-page/tsconfig.app.json",
+            "assets": ["packages/one-page/*.md"]
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/js:node",
+          "options": {
+            "buildTarget": "one-page:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/one-page/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/one-page"],
+          "options": {
+            "jestConfig": "packages/one-page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    }
+  }
 }
