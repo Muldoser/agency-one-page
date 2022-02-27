@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-header',
+  selector: 'aop-header',
   styleUrls: ['header.component.scss'],
   template: `
   <header class="masthead">

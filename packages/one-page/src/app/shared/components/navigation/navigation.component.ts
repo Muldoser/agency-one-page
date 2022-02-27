@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation',
+  selector: 'aop-navigation',
   styleUrls: ['./navigation.component.scss'],
   template: `
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
