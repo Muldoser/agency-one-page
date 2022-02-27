@@ -1,166 +1,97 @@
-# Agency - OnePage
+
+
+# AgencyOnePage
+
 
 This project started from a simple Bootstrap template, [Agency](https://github.com/BlackrockDigital/startbootstrap-agency), and was turned in to an Angular alternative.
 
-## Package manager
+This project was generated using [Nx](https://nx.dev).
 
-In this project we use [yarn](https://yarnpkg.com/en/) to manage the node modules. If you rather use good 'ole [npm](https://www.npmjs.com/), you need to change some things in the package.json and use `npm install` instead of `yarn`. 
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
-## Get started
- > This Angular project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+🔎 **Smart, Fast and Extensible Build System**
 
-```shell
-# Development server
-# For a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-$ ng serve
+## Adding capabilities to your workspace
 
-# Code scaffolding
-# To generate a new component.
+Nx supports many plugins which add capabilities for developing different types of applications and different tools.
 
-$ ng generate component component-name
-# You can also use
-$ ng generate directive|pipe|service|class|guard|interface|enum|module
+These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
 
-# Build
-# To build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-$ ng build
+Below are our core plugins:
 
-# Running unit tests
-# To execute the unit tests via Karma.
-$ ng test
+- [React](https://reactjs.org)
+  - `npm install --save-dev @nrwl/react`
+- Web (no framework frontends)
+  - `npm install --save-dev @nrwl/web`
+- [Angular](https://angular.io)
+  - `npm install --save-dev @nrwl/angular`
+- [Nest](https://nestjs.com)
+  - `npm install --save-dev @nrwl/nest`
+- [Express](https://expressjs.com)
+  - `npm install --save-dev @nrwl/express`
+- [Node](https://nodejs.org)
+  - `npm install --save-dev @nrwl/node`
 
-# Running end-to-end tests
-# To execute the end-to-end tests via Protractor.
-$ ng e2e 
+There are also many [community plugins](https://nx.dev/community) you could add.
 
-# Further help
-# To get more help on the Angular CLI use
-$ ng help
+## Generate an application
 
-```
+Run `nx g @nrwl/react:app my-app` to generate an application.
 
-### More info
-* [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-* [Karma](https://karma-runner.github.io)
-* [Protractor](http://www.protractortest.org/)
+> You can use any of the plugins above to generate applications as well.
 
-## Transformation
+When using Nx, you can create multiple applications and libraries in the same workspace.
 
-The original [Agency bootstrap template](https://startbootstrap.com/template-overviews/agency/) (github: https://github.com/BlackrockDigital/startbootstrap-agency) uses jQuery to make stuff interactive. So what has to be done _not_ to do this? To simplify the comparison I will refer to the original as **Agency** and this _Angularised_ version as **OnePage**.
+## Generate a library
 
-### Packages
-#### 1. Install required dependencies
+Run `nx g @nrwl/react:lib my-lib` to generate a library.
 
-The **Agency** `package.json` only contains 4 dependencies:
+> You can also use any of the plugins above to generate libraries as well.
 
-```json
-  "dependencies": {
-    "bootstrap": "4.0.0",
-    "font-awesome": "4.7.0",
-    "jquery": "3.3.1",
-    "jquery.easing": "^1.4.1"
-  }
-```
+Libraries are shareable across libraries and applications. They can be imported from `@agency-one-page/mylib`.
 
-Add these 4 to the existing dependencies in `package.json` of the **OnePage** and run `yarn` to install them. Since we are using [Angular Cli](https://cli.angular.io/), we don't need **Agency**'s `devDependencies` to build/serve our project, so we can ignore those.
+## Development server
 
-#### 2. Install popper.js: `yarn add popper.js`
+Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-jQuery and/or bootstrap needs another dependency called `popper.js`, which we also need to install.
+## Code scaffolding
 
-```shell
-  $ yarn add popper.js
-```
+Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
 
-### HTML + Angular Component
-#### 3. Create `AppMainPageComponent` component
-#### 4. Copy `<body>` content into `src/app/main-page/main-page.component.html`
-#### 5. Specify the right styleURLS in the component
+## Build
 
-For the HTML, we imported the important HTML from the original **Agency**'s `index.html`. This is everything inside the `body`.
-We created a component in `src/app/main-page/main-page.component.ts` that looks like this:
+Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-```typescript
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+## Running unit tests
 
-@Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-main-page',
-  styleUrls: [
-    'main-page.component.scss',
-    '../../scss/agency.scss',
-    '../../../node_modules/bootstrap/scss/bootstrap.scss',
-    '../../../node_modules/font-awesome/css/font-awesome.min.css'
-  ],
-  templateUrl: './main-page.component.html'
-})
-export class AppMainPageComponent {
-}
-```
+Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
 
-We defined it in the `AppMainPageModule` and imported it into the `AppModule`. 
+Run `nx affected:test` to execute the unit tests affected by a change.
 
-In the component above we import the necessary styles.
+## Running end-to-end tests
 
-* `'main-page.component.scss',`: Is our personal **OnePage** stylesheet for this component.
-* `'../../scss/agency.scss',`: Is the index stylesheet that imports all the right **Agency** styles for us.
-* `'../../../node_modules/bootstrap/scss/bootstrap.scss',`: We need for **Agency**'s use of bootstrap.
-* `'../../../node_modules/font-awesome/css/font-awesome.min.css'`: To be able to use the _font-awesome_ icon set.
+Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
-### SCSS
-#### 6. Copy `scss`into `src/`
-Right now we won't quite get the right result. We specified the styles in our component, but we haven't added them to the project yet. We have to import the scss files from **Agency** to use the styles that have already been created. For this, we have placed the `scss` folder from **Agency** inside the `src` directory.
+Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
-### Images
+## Understand your workspace
 
-If you want to reuse the images from the template, copy the `img` folder into your project.
+Run `nx graph` to see a diagram of the dependencies of your projects.
 
-#### 7. Import `img` folder and contents in to `src/`
+## Further help
 
-In the **OnePage** we renamed the `img` folder and every occurence/reference to `assets` (search and replace in _html_ and _scss_).
-
-### Remaining setup
-
-In our _app.module.ts_, we want to specify where to go.
-
-#### 8. Add `AppMainPageComponent` to the main module and route there
-
-To navigate to our new page component, we set up the angular router as follows:
-
-```
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'app' },
-      { path: 'app', component: AppMainPageComponent }
-    ]),
-    ...modules
-  ],
-```
-
-Lastly, we need to include Bootstrap's JavaScript in our project. We do this in the `main.ts`, above our app-bootstrapping.
-
-#### 9. Import bootstrap in **main.ts**
-
-``` typescript
-import 'bootstrap';
-```
+Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 
-#### Done
 
-This should get your new angular-bootstrap-template going! If these steps don't work out or something's missing, let me know and I'll update the steps.
+## ☁ Nx Cloud
 
-#### Note:
-Other templates might include different packages and other setups that might require more attention.
+### Distributed Computation Caching & Distributed Task Execution
 
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
 
-## Next steps
+Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
 
-This is an initial transformation from the Template to an Angular project, so some other stuff can be done to make this project better. Following items might be nice to implement next: 
+Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
-* Split the `AppMainPageComponent` into smaller components (header, footer, navbar...).
-* Extract the styles from the _src/scss_ into the split components.
-* Recreate the custom js actions from **Agency**, preferably without jQuery (e.g. smooth scrolling).
-* Check if we can do without the `jquery.easing` package.
-* Write some tests maybe.
+Visit [Nx Cloud](https://nx.app/) to learn more.
