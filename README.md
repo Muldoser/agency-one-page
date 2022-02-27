@@ -1,6 +1,6 @@
 
 
-# AgencyOnePage
+# Agency
 
 
 This project started from a simple Bootstrap template, [Agency](https://github.com/BlackrockDigital/startbootstrap-agency), and was turned in to an Angular alternative.
@@ -48,7 +48,7 @@ Run `nx g @nrwl/react:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are shareable across libraries and applications. They can be imported from `@agency-one-page/mylib`.
+Libraries are shareable across libraries and applications. They can be imported from `@agency/mylib`.
 
 ## Development server
 
