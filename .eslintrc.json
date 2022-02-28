@@ -5,6 +5,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": [
+        "eslint-config-muldoser"
+      ],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",

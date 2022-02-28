@@ -1,3 +1,8 @@
 {
-  "http.proxySupport": "off"
+  "http.proxySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true,
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2,
 }
