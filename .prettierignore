@@ -1,0 +1,14 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/www
+/coverage
+/documentation
+/platforms
+/resources
+/plugins
+
+config.xml
+package.json
+package-lock.json
+yarn.lock

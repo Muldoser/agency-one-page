@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "one-page": "packages/one-page",
+    "one-page-e2e": "packages/one-page-e2e"
+  }
+}
