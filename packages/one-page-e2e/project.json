@@ -1,0 +1,28 @@
+{
+  "root": "packages/one-page-e2e",
+  "sourceRoot": "packages/one-page-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "packages/one-page-e2e/cypress.json",
+        "devServerTarget": "one-page:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "one-page:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/one-page-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["one-page"]
+}
